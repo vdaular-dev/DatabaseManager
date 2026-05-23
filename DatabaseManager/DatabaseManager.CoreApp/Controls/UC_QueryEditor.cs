@@ -38,10 +38,12 @@ namespace DatabaseManager.Controls
         private List<SqlWord> allWords;
         private bool intellisenseSetuped;
         private bool enableIntellisense;
+        private bool hasSetupIntellisence;
         private List<string> dbSchemas;
         private CodeCompletionWindow codeCompletionWindow;
         private string commentString => this.DbInterpreter?.CommentString;
         private Dictionary<DatabaseObject, List<string>> dictTableAndViewAlias = new Dictionary<DatabaseObject, List<string>>();
+        private ToolStripMenuItem tsmiIgnoreQuotationTemporarily = new ToolStripMenuItem("Ignore Quotation Temporarily") { Name = "tsmiIgnoreQuotationTemporarily" };
 
         public RunScriptsHandler OnRunScripts;
         public DatabaseType DatabaseType { get; set; }
@@ -56,7 +58,7 @@ namespace DatabaseManager.Controls
         public ContextMenuStrip ContextMenu => this.txtEditor.ActiveTextAreaControl.ContextMenuStrip;
         public bool UseSqlParser { get; private set; }
         public bool UseProfiler { get; private set; }
-        
+
         private int CurrentCharIndex
         {
             get
@@ -104,6 +106,9 @@ namespace DatabaseManager.Controls
                 tsmiUpdateIntellisense.Click += this.tsmiUpdateIntellisense_Click;
                 this.ContextMenu.Items.Add(tsmiUpdateIntellisense);
 
+                this.tsmiIgnoreQuotationTemporarily.Click += this.tsmiIgnoreQuotationTemporarily_Click;
+                this.ContextMenu.Items.Add(this.tsmiIgnoreQuotationTemporarily);
+
                 ToolStripMenuItem tsmiValidateScripts = new ToolStripMenuItem("Validate Scripts") { Name = "tsmiValidateScripts" };
                 tsmiValidateScripts.Click += this.tsmiValidateScripts_Click;
                 this.ContextMenu.Items.Add(tsmiValidateScripts);
@@ -144,6 +149,21 @@ namespace DatabaseManager.Controls
             this.schemaInfo = DataStore.GetSchemaInfo(this.DatabaseType);
             this.allWords = SqlWordFinder.FindWords(this.DatabaseType, "");
             this.dbSchemas = this.allWords.Where(item => item.Type == SqlWordTokenType.Schema).Select(item => item.Text).ToList();
+
+            if (this.DatabaseType == DatabaseType.Sqlite || this.DatabaseType == DatabaseType.SqlServer || this.DatabaseType == DatabaseType.MySql)
+            {
+                if (!this.hasSetupIntellisence && this.DbInterpreter != null)
+                {
+                    this.DbInterpreter.IgnoreQuotationTemporarily = true;
+
+                    if (this.ContextMenu != null)
+                    {
+                        this.tsmiIgnoreQuotationTemporarily.Checked = this.DbInterpreter.IgnoreQuotationTemporarily;
+                    }
+                }
+            }
+
+            this.hasSetupIntellisence = true;
         }
 
         private void txtEditor_KeyDown(object sender, KeyEventArgs e)
@@ -810,20 +830,6 @@ namespace DatabaseManager.Controls
             return null;
         }
 
-        private string GetTextWithoutComments()
-        {
-            string content = this.txtEditor.Text;
-
-            string commentChars = this.DbInterpreter.CommentString;
-
-            if (commentChars != "--")
-            {
-                content = content.Replace(commentChars, "--");
-            }
-
-            return ScriptHelper.RemoveComments(content, true);
-        }
-
         private List<string> GetEditorItems()
         {
             return this.GetContentItems(this.txtEditor.Text);
@@ -1071,6 +1077,13 @@ namespace DatabaseManager.Controls
             this.ClearSelection();
 
             this.ValidateScripts(true);
+        }
+
+        private void tsmiIgnoreQuotationTemporarily_Click(object sender, EventArgs e)
+        {
+            this.DbInterpreter.IgnoreQuotationTemporarily = !this.DbInterpreter.IgnoreQuotationTemporarily;
+
+            (sender as ToolStripMenuItem).Checked = this.DbInterpreter.IgnoreQuotationTemporarily;
         }
 
         private void tsmiUseProfiler_Click(object sender, EventArgs e)

@@ -29,6 +29,7 @@ namespace DatabaseInterpreter.Core
         public abstract string CommentString { get; }
         public bool ShowBuiltinDatabase => Setting.ShowBuiltinDatabase;
         public DbObjectNameMode DbObjectNameMode => Setting.DbObjectNameMode;
+        public bool IgnoreQuotationTemporarily { get; set; }
         public int DataBatchSize => Setting.DataBatchSize;
         public bool NotCreateIfExists => Setting.NotCreateIfExists;
         public abstract string CommandParameterChar { get; }
@@ -1058,6 +1059,11 @@ namespace DatabaseInterpreter.Core
 
         public string GetQuotedString(string str)
         {
+            if(this.IgnoreQuotationTemporarily)
+            {
+                return str;
+            }
+
             if (str != null && this.SupportQuotationChar && (this.DbObjectNameMode == DbObjectNameMode.WithQuotation || str.Contains(" ")))
             {
                 return $"{this.QuotationLeftChar}{str}{this.QuotationRightChar}";
