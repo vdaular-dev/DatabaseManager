@@ -544,7 +544,7 @@ namespace DatabaseManager.Controls
                     }
                 }
             }
-            else if(tabPage.Name == this.tabPartition.Name)
+            else if(tabPage.Name == this.tabPartition?.Name)
             {
                 int count = this.tabPartition.Controls.Count;
 

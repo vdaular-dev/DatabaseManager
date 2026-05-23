@@ -127,8 +127,8 @@ namespace DatabaseManager.Core
                                 string sourcePrimaryKeySql = $"select {strColumnNames} from {this.sourceDbInterpreter.GetQuotedDbObjectNameWithSchema(sourceTable)} order by {orderColumns}";
                                 string targetPrimaryKeySql = $"select {strColumnNames} from {this.sourceDbInterpreter.GetQuotedDbObjectNameWithSchema(targetTable)} order by {orderColumns}";
 
-                                DataTable sourcePrimaryKeyDataTable = await this.sourceDbInterpreter.GetDataTableAsync(sourceConnection, sourcePrimaryKeySql, cancellationToken);
-                                DataTable targetPrimaryKeyDataTable = await this.sourceDbInterpreter.GetDataTableAsync(targetConnnection, targetPrimaryKeySql, cancellationToken);
+                                DataTable sourcePrimaryKeyDataTable = await this.sourceDbInterpreter.GetDataTableAsync(sourceConnection, sourcePrimaryKeySql, cancellationToken, false);
+                                DataTable targetPrimaryKeyDataTable = await this.sourceDbInterpreter.GetDataTableAsync(targetConnnection, targetPrimaryKeySql, cancellationToken, false);
 
                                 var groupedPrimaryKeyRows = this.GetGroupedDataRows(sourcePrimaryKeyDataTable.Rows.Cast<DataRow>().ToList(), targetPrimaryKeyDataTable.Rows.Cast<DataRow>().ToList());
 
