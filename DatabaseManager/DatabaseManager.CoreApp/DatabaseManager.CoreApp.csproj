@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Resources\_dbManager.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\_dbManager.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DiffPlex" Version="1.9.0" />
