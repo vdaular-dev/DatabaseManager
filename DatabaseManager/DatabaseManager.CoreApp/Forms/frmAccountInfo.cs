@@ -5,6 +5,7 @@ using DatabaseManager.Data;
 using DatabaseManager.Profile.Manager;
 using DatabaseManager.Profile.Model;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -14,8 +15,17 @@ namespace DatabaseManager.Forms
     public partial class frmAccountInfo : Form
     {
         private bool requriePassword = false;
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string AccountProfileId { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public AccountProfileInfo AccountProfileInfo { get; set; }
 
         public frmAccountInfo(DatabaseType dbType)

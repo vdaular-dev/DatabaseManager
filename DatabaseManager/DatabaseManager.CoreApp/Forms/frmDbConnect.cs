@@ -7,6 +7,7 @@ using DatabaseManager.Profile.Manager;
 using DatabaseManager.Profile.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace DatabaseManager.Forms
@@ -17,10 +18,20 @@ namespace DatabaseManager.Forms
         private bool isAdd = true;
         private bool isPopulating = false;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
-        public string ProfileId { get; set; }     
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string ProfileId { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IsOnlyForSelectDatabase { get; set; }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ConnectionInfo ConnectionInfo { get; set; }
 
         public frmDbConnect(DatabaseType dbType)

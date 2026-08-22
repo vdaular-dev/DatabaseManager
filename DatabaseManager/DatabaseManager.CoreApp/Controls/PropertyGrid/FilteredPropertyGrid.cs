@@ -33,7 +33,10 @@ namespace DatabaseManager.Controls
 			base.SelectedObject = m_Wrapper;
 		}
 
-		public new AttributeCollection BrowsableAttributes {
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+
+        public new AttributeCollection BrowsableAttributes {
 			get { return m_BrowsableAttributes; }
 			set {
 				if(m_BrowsableAttributes != value) {
@@ -44,8 +47,10 @@ namespace DatabaseManager.Controls
 			}
 		}
 
-		/// <summary>Get or set the categories to hide.</summary>
-		public AttributeCollection HiddenAttributes {
+        /// <summary>Get or set the categories to hide.</summary>
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public AttributeCollection HiddenAttributes {
 			get { return m_HiddenAttributes; }
 			set {
 				if(value != m_HiddenAttributes) {
@@ -55,9 +60,11 @@ namespace DatabaseManager.Controls
 				}
 			}
 		}
-		/// <summary>Get or set the properties to show.</summary>
-		/// <exception cref="ArgumentException">if one or several properties don't exist.</exception>
-		public string[] BrowsableProperties {
+        /// <summary>Get or set the properties to show.</summary>
+        /// <exception cref="ArgumentException">if one or several properties don't exist.</exception>
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string[] BrowsableProperties {
 			get { return m_BrowsableProperties; }
 			set {
 				if(value != m_BrowsableProperties) {
@@ -68,8 +75,10 @@ namespace DatabaseManager.Controls
 			}
 		}
 
-		/// <summary>Get or set the properties to hide.</summary>
-		public string[] HiddenProperties {
+        /// <summary>Get or set the properties to hide.</summary>
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string[] HiddenProperties {
 			get { return m_HiddenProperties; }
 			set {
 				if(value != m_HiddenProperties) {
@@ -80,9 +89,11 @@ namespace DatabaseManager.Controls
 			}
 		}
 
-		/// <summary>Overwrite the PropertyGrid.SelectedObject property.</summary>
-		/// <remarks>The object passed to the base PropertyGrid is the wrapper.</remarks>
-		public new object SelectedObject {
+        /// <summary>Overwrite the PropertyGrid.SelectedObject property.</summary>
+        /// <remarks>The object passed to the base PropertyGrid is the wrapper.</remarks>
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new object SelectedObject {
 			get { return m_Wrapper != null ? ((ObjectWrapper)base.SelectedObject).SelectedObject : null; }
 			set {
 				// Set the new object to the wrapper and create one if necessary.

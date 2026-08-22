@@ -52,11 +52,11 @@ namespace DatabaseManager.Controls
             this.LoadDbTypes();
         }
 
-        private void ShowContent(DatabaseObjectDisplayInfo content)
+        private void ShowContent(DatabaseObjectDisplayInfo content, bool refresh)
         {
             if (this.OnShowContent != null)
             {
-                this.OnShowContent(content);
+                this.OnShowContent(content, refresh);
             }
         }
 

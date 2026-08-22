@@ -1,10 +1,9 @@
 ﻿using DatabaseConverter.Core.Functions;
-using DatabaseConverter.Core.Model;
 using DatabaseConverter.Model;
 using DatabaseInterpreter.Core;
 using DatabaseInterpreter.Model;
 using DatabaseInterpreter.Utility;
-using PoorMansTSqlFormatterRedux;
+using SQL.Formatter;
 using SqlAnalyser.Model;
 using System;
 using System.Collections.Generic;
@@ -715,13 +714,9 @@ namespace DatabaseConverter.Core
             return functionInfo;
         }
 
-        public string FormatSql(string sql, out bool hasError)
+        public string FormatSql(string sql)
         {
-            hasError = false;
-
-            SqlFormattingManager manager = new SqlFormattingManager();
-
-            string formattedSql = manager.Format(sql, ref hasError);
+            string formattedSql = SqlFormatter.Format(sql);
 
             return formattedSql;
         }

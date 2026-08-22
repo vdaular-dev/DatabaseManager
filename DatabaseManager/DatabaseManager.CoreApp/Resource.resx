@@ -160,6 +160,9 @@
   <data name="OpenFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Owner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Owner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Run.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -167,7 +170,7 @@
     <value>Resources\Save32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Schema" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\schema.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>Resources\Schema.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TableCopy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\TableCopy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -189,9 +192,6 @@
   </data>
   <data name="tree_Function" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\tree_Function.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tree_Function_Trigger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\tree_Function_Trigger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tree_Procedure" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\tree_Procedure.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -225,62 +225,5 @@
   </data>
   <data name="tree_View" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\tree_View.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_account" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_account.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_category" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_category.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_columnMapping" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_columnMapping.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_config.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_dataCompare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_dataCompare.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_dbBackup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_dbBackup.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_dbCompare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_dbCompare.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_dbConvert" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_dbConvert.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_dbManager" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_dbManager.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_dbScripts" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_dbScripts.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_diagnose" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_diagnose.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_image.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_lock.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_polygon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_polygon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_search.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_sqlQuery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_sqlQuery.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_table" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_table.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_tableCopy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_tableCopy.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_translate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\_translate.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -2,6 +2,7 @@
 using DatabaseManager.Core;
 using DatabaseManager.Core.Model;
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,6 +10,8 @@ namespace DatabaseManager.Forms
 {
     public partial class frmBackupSettingRedefine : Form
     {
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
         public BackupSetting Setting { get; private set; }
 

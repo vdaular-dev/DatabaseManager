@@ -1,6 +1,4 @@
-﻿using Antlr.Runtime.Tree;
-using Antlr4.Runtime.Misc;
-using DatabaseConverter.Model;
+﻿using DatabaseConverter.Model;
 using DatabaseInterpreter.Core;
 using DatabaseInterpreter.Model;
 using DatabaseInterpreter.Utility;

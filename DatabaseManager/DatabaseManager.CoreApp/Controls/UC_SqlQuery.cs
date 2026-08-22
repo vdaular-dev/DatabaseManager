@@ -10,6 +10,7 @@ using FontAwesome.Sharp;
 using SqlCodeEditor;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -36,7 +37,8 @@ namespace DatabaseManager.Controls
 
         internal UC_QueryEditor QueryEditor => this.queryEditor;
 
-
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ReadOnly
         {
             get { return this.readOnly; }
@@ -48,12 +50,16 @@ namespace DatabaseManager.Controls
             }
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SplitterDistance
         {
             get { return this.splitContainer1.SplitterDistance; }
             set { this.splitContainer1.SplitterDistance = value; }
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowEditorMessage
         {
             get { return this.showEditorMessage; }

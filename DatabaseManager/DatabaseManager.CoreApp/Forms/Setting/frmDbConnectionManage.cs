@@ -7,6 +7,7 @@ using DatabaseManager.Profile.Model;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +20,12 @@ namespace DatabaseManager.Forms
         private Rectangle dragBox;
         private int rowIndexFromMouseDown;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IsForSelecting { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
 
         public AccountProfileInfo SelectedAccountProfileInfo { get; private set; }

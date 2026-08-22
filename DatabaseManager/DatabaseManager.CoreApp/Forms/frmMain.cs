@@ -5,12 +5,6 @@ using DatabaseManager.Core;
 using DatabaseManager.Core.Model;
 using DatabaseManager.Helper;
 using FontAwesome.Sharp;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace DatabaseManager.Forms
@@ -144,7 +138,7 @@ namespace DatabaseManager.Forms
             this.dockPanelMain.Theme = theme;
         }
 
-        private void ShowDbObjectContent(DatabaseObjectDisplayInfo info)
+        private void ShowDbObjectContent(DatabaseObjectDisplayInfo info, bool refresh)
         {
             IDockContent content = this.FindContent(info);
 
@@ -155,6 +149,11 @@ namespace DatabaseManager.Forms
                 contentForm = content as frmContent;
 
                 contentForm.Show(this.dockPanelMain);
+
+                if (refresh)
+                {
+                    contentForm.ContentControl.ShowContent(info);
+                }
             }
             else
             {
@@ -343,7 +342,7 @@ namespace DatabaseManager.Forms
 
                 info.ConnectionInfo = connectionInfo;
 
-                this.ShowDbObjectContent(info);
+                this.ShowDbObjectContent(info, false);
             }
             else
             {
@@ -443,7 +442,7 @@ namespace DatabaseManager.Forms
             info.FilePath = filePath;
             info.Name = Path.GetFileName(info.FilePath);
 
-            this.ShowDbObjectContent(info);
+            this.ShowDbObjectContent(info, true);
         }
 
         private frmContent GetCurrentContentForm()

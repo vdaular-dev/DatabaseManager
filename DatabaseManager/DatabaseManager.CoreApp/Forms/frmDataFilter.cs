@@ -2,6 +2,7 @@
 using DatabaseManager.Core.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -12,6 +13,9 @@ namespace DatabaseManager.Forms
     {
         public List<DataGridViewColumn> Columns = new List<DataGridViewColumn>();
 
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public QueryConditionBuilder ConditionBuilder { get; set; }
 
         public frmDataFilter()

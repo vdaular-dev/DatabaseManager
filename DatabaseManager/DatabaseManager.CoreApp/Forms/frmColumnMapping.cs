@@ -1,6 +1,7 @@
 ﻿using DatabaseInterpreter.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -10,11 +11,25 @@ namespace DatabaseManager.Forms
     public partial class frmColumnMapping : Form
     {
         private const string EmptyItem = "<None>";
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string ReferenceTableName { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string TableName { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<string> ReferenceTableColumns { get; set; } = new List<string>();
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<string> TableColumns { get; set; } = new List<string>();
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<ForeignKeyColumn> Mappings { get; set; } = new List<ForeignKeyColumn>();
 
         public frmColumnMapping()

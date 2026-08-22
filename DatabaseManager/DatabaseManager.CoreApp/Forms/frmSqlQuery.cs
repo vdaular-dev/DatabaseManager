@@ -1,13 +1,22 @@
 ﻿using DatabaseManager.Core.Model;
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace DatabaseManager.Forms
 {
     public partial class frmSqlQuery : Form
     {
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ReadOnly { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SplitterDistance { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowEditorMessage { get; set; }
 
         public frmSqlQuery()

@@ -15,8 +15,9 @@ namespace DatabaseManager.Forms
 {
     public partial class frmScriptsViewer : Form
     {
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
-
 
         public frmScriptsViewer()
         {

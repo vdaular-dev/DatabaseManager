@@ -5,6 +5,7 @@ using DatabaseManager.Core.Model;
 using DatabaseManager.Helper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -16,7 +17,13 @@ namespace DatabaseManager.Controls
         private bool inited = false;
         private bool loadedData = false;
         private DateTime dtTypeCellClick = DateTime.Now;
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Table Table { get; set; }
 
         public bool Inited => this.inited;

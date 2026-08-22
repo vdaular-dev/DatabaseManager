@@ -16,8 +16,16 @@ namespace DatabaseManager.Forms
     {
         private const string EmptyItem = "<None>";
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         internal List<string> SourceSchemas { get; set; } = new List<string>();
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         internal List<string> TargetSchemas { get; set; } = new List<string>();
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         internal List<SchemaMappingInfo> Mappings { get; set; } = new List<SchemaMappingInfo>();
 
         public frmSchemaMapping()

@@ -2,12 +2,10 @@ using DatabaseInterpreter.Core;
 using DatabaseManager.Core;
 using DatabaseManager.Forms;
 using DatabaseManager.Profile.Manager;
-using System;
-using System.Windows.Forms;
 
-namespace DatabaseManager
+namespace DatabaseManager.CoreApp
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
@@ -17,11 +15,12 @@ namespace DatabaseManager
         {
             DbInterpreter.Setting = SettingManager.GetInterpreterSetting();
 
-            ProfileBaseManager.Init();
+            ProfileBaseManager.Init();   
 
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            // To customize application configuration such as set high DPI settings or default font,
+            // see https://aka.ms/applicationconfiguration.
+            ApplicationConfiguration.Initialize();
+
             Application.Run(new frmMain());
         }
     }

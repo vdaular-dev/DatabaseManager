@@ -21,6 +21,8 @@ namespace DatabaseManager.Controls
         private Control control = null;
         private Color backgroundColor = System.Drawing.SystemColors.ControlDark; // Color.FromArgb(120, Color.Black);
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Color BackgroundColor
         {
             get
@@ -33,8 +35,12 @@ namespace DatabaseManager.Controls
             }
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool InterruptButtonVisible { get; set; } = true;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public CancellationTokenSource CancellationTokenSource { get; set; }
 
 

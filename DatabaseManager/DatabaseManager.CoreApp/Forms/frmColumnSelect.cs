@@ -3,6 +3,7 @@ using DatabaseManager.Core.Model;
 using DatabaseManager.Helper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,8 +12,17 @@ namespace DatabaseManager.Forms
     public partial class frmColumnSelect : Form
     {
         private bool isIndexColumn;
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ColumnIsReadOnly { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IsSingleSelect { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowSortColumn { get; set; }
         public List<SimpleColumn> SelectedColumns { get; private set; }
 

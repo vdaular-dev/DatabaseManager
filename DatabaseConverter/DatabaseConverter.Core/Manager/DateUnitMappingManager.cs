@@ -1,12 +1,7 @@
 ﻿using DatabaseConverter.Core.Model;
-using DatabaseConverter.Model;
-using DatabaseInterpreter.Core;
 using DatabaseInterpreter.Utility;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 
 namespace DatabaseConverter.Core

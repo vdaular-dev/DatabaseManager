@@ -12,6 +12,7 @@ using SqlCodeEditor.Gui.CompletionWindow;
 using SqlCodeEditor.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -46,7 +47,13 @@ namespace DatabaseManager.Controls
         private ToolStripMenuItem tsmiIgnoreQuotationTemporarily = new ToolStripMenuItem("Ignore Quotation Temporarily") { Name = "tsmiIgnoreQuotationTemporarily" };
 
         public RunScriptsHandler OnRunScripts;
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DbInterpreter DbInterpreter { get; set; }
         public event EventHandler SetupIntellisenseRequired;
         public QueryEditorInfoMessageHandler OnQueryEditorInfoMessage;

@@ -100,7 +100,7 @@ namespace DatabaseConverter.Core
 
                     view.Definition = definition;
 
-                    if (this.Option.CollectTranslateResultAfterTranslated)
+                    if (this.Option?.CollectTranslateResultAfterTranslated == true)
                     {
                         this.TranslateResults.Add(new TranslateResult() { DbObjectType = DatabaseObjectType.View, DbObjectName = view.Name, Data = view.Definition });
                     }
@@ -140,41 +140,38 @@ namespace DatabaseConverter.Core
 
                 if (this.sourceDbInterpreter.GetType() == typeof(MySqlInterpreter))
                 {
-                    bool hasError = false;
-                    string formattedDefinition = this.FormatSql(definition, out hasError);
+                    string formattedDefinition = this.FormatSql(definition);
 
-                    if (!hasError)
+                    string[] lines = formattedDefinition.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    Regex joinRegex = new Regex(@"\b(join)\b", RegexOptions.IgnoreCase);
+                    Regex onRegex = new Regex(@"\b(on)\b", RegexOptions.IgnoreCase);
+                    Regex wordRegex = new Regex("([a-zA-Z(]+)", RegexOptions.IgnoreCase);
+
+                    sb = new StringBuilder();
+
+                    foreach (string line in lines)
                     {
-                        string[] lines = formattedDefinition.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                        bool hasChanged = false;
 
-                        Regex joinRegex = new Regex(@"\b(join)\b", RegexOptions.IgnoreCase);
-                        Regex onRegex = new Regex(@"\b(on)\b", RegexOptions.IgnoreCase);
-                        Regex wordRegex = new Regex("([a-zA-Z(]+)", RegexOptions.IgnoreCase);
-
-                        sb = new StringBuilder();
-                        foreach (string line in lines)
+                        if (joinRegex.IsMatch(line))
                         {
-                            bool hasChanged = false;
+                            string leftStr = line.Substring(line.ToLower().LastIndexOf("join") + 4);
 
-                            if (joinRegex.IsMatch(line))
+                            if (!onRegex.IsMatch(line) && !wordRegex.IsMatch(leftStr))
                             {
-                                string leftStr = line.Substring(line.ToLower().LastIndexOf("join") + 4);
-                                
-                                if (!onRegex.IsMatch(line) && !wordRegex.IsMatch(leftStr))
-                                {
-                                    hasChanged = true;
-                                    sb.AppendLine($"{line} ON 1=1 ");
-                                }
-                            }
-
-                            if (!hasChanged)
-                            {
-                                sb.AppendLine(line);
+                                hasChanged = true;
+                                sb.AppendLine($"{line} ON 1=1 ");
                             }
                         }
 
-                        definition = sb.ToString();
+                        if (!hasChanged)
+                        {
+                            sb.AppendLine(line);
+                        }
                     }
+
+                    definition = sb.ToString();
                 }
             }
             catch (Exception ex)

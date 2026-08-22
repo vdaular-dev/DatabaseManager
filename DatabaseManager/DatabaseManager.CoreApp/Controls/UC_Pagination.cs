@@ -44,6 +44,8 @@ namespace DatabaseManager.Controls
             this.btnRefresh.Image = IconImageHelper.GetImage(IconChar.ArrowsRotate, this.imageColor);
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int PageSize
         {
             get
@@ -67,6 +69,8 @@ namespace DatabaseManager.Controls
             }
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public long PageCount
         {
             get
@@ -105,6 +109,8 @@ namespace DatabaseManager.Controls
             }
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public long PageNumber
         {
             get
@@ -132,6 +138,8 @@ namespace DatabaseManager.Controls
             }
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public long TotalCount
         {
             get

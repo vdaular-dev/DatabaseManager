@@ -3,6 +3,7 @@ using DatabaseInterpreter.Model;
 using DatabaseManager.Core.Model;
 using DatabaseManager.Profile.Manager;
 using System;
+using System.ComponentModel;
 using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace DatabaseManager.Controls
     {
         private string serverVersion;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
 
         public bool RememberPassword => this.chkRememberPassword.Checked;

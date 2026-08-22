@@ -2,6 +2,7 @@
 using DatabaseInterpreter.Model;
 using DatabaseManager.Profile.Model;
 using System;
+using System.ComponentModel;
 using System.Data.Common;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,8 @@ namespace DatabaseManager.Controls
     {
         private string databaseVersion;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
 
         public bool HasPassword => this.chkHasPassword.Checked;

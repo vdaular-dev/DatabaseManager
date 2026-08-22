@@ -5,8 +5,6 @@ using SqlAnalyser.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static PlSqlParser;
-using static TSqlParser;
 
 namespace SqlAnalyser.Core
 {

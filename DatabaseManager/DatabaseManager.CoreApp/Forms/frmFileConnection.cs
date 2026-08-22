@@ -4,6 +4,7 @@ using DatabaseManager.Data;
 using DatabaseManager.Profile.Manager;
 using DatabaseManager.Profile.Model;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -14,12 +15,25 @@ namespace DatabaseManager.Forms
     public partial class frmFileConnection : Form
     {
         private bool requriePassword = false;
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ConnectionInfo ConnectionInfo { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowChooseControls { get; set; }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string FileConnectionProfileId { get; set; }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public FileConnectionProfileInfo FileConnectionProfileInfo { get; set; }
 
         public frmFileConnection()

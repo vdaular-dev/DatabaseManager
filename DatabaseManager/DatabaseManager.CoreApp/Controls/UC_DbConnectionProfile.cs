@@ -31,6 +31,8 @@ namespace DatabaseManager.Controls
         public event DatabaseTypeSelectedChangeHandler DatabaseTypeSelectedChanged;
 
         [Category("Title")]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string Title
         {
             get
@@ -45,12 +47,16 @@ namespace DatabaseManager.Controls
 
         public int ClientHeight => this.btnAddDbProfile.Height;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType
         {
             get { return ManagerUtil.GetDatabaseType(this.cboDbType.Text); }
             set { this.cboDbType.Text = value.ToString(); }
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool EnableDatabaseType
         {
             get { return this.cboDbType.Enabled; }

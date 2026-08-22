@@ -7,6 +7,7 @@ using DatabaseManager.Helper;
 using DatabaseManager.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -19,8 +20,17 @@ namespace DatabaseManager.Forms
     {
         private bool isRemovingTreeNode = false;
         private List<ScriptDiagnoseResult> results;
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ConnectionInfo ConnectionInfo { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ScriptDiagnoseType DiagnoseType { get; set; }
 
         public frmScriptDiagnoseResult()

@@ -1,9 +1,7 @@
-﻿using DatabaseConverter.Core.Model;
-using DatabaseConverter.Model;
+﻿using DatabaseConverter.Model;
 using DatabaseInterpreter.Core;
 using DatabaseInterpreter.Model;
 using DatabaseInterpreter.Utility;
-using Newtonsoft.Json.Linq;
 using SqlAnalyser.Core;
 using SqlAnalyser.Model;
 using System;
@@ -12,8 +10,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
-using TSQL.Tokens;
 
 namespace DatabaseConverter.Core
 {

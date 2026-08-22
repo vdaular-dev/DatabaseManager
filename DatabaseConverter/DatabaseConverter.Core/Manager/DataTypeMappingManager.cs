@@ -1,7 +1,5 @@
 ﻿using DatabaseConverter.Model;
-using DatabaseInterpreter.Core;
 using DatabaseInterpreter.Model;
-using DatabaseInterpreter.Utility;
 using System;
 using System.Collections.Generic;
 using System.IO;

@@ -1,6 +1,7 @@
 ﻿using DatabaseManager.Helper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,8 +11,13 @@ namespace DatabaseManager.Forms
     {
         private bool isChecking = false;
         private List<CheckItemInfo> items;
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool Required { get; set; } = true;
-   
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<CheckItemInfo> CheckedItem { get; set; } = new List<CheckItemInfo>();
 
         public frmItemsSelector(List<CheckItemInfo> items)

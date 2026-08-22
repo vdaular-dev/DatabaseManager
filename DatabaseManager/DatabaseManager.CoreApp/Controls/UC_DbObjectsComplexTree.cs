@@ -20,7 +20,7 @@ using View = DatabaseInterpreter.Model.View;
 
 namespace DatabaseManager.Controls
 {
-    public delegate void ShowDbObjectContentHandler(DatabaseObjectDisplayInfo content);
+    public delegate void ShowDbObjectContentHandler(DatabaseObjectDisplayInfo content, bool refresh);
 
     public partial class UC_DbObjectsComplexTree : UserControl, IObserver<FeedbackInfo>
     {
@@ -730,7 +730,7 @@ namespace DatabaseManager.Controls
                     Content = result.Script,
                     ScriptAction = scriptAction,
                     ScriptParameters = result.Parameters
-                });
+                }, true);
             }
             catch (Exception ex)
             {
@@ -1037,7 +1037,7 @@ namespace DatabaseManager.Controls
             string database = this.GetDatabaseNode(node).Name;
             DatabaseObject dbObject = node.Tag as DatabaseObject;
 
-            this.ShowContent(new DatabaseObjectDisplayInfo() { Name = dbObject.Name, Schema = dbObject.Schema, DatabaseType = this.databaseType, DatabaseObject = dbObject, DisplayType = type, ConnectionInfo = this.GetConnectionInfo(database) });
+            this.ShowContent(new DatabaseObjectDisplayInfo() { Name = dbObject.Name, Schema = dbObject.Schema, DatabaseType = this.databaseType, DatabaseObject = dbObject, DisplayType = type, ConnectionInfo = this.GetConnectionInfo(database) }, false);
         }
 
         public void OnNext(FeedbackInfo value)
@@ -1136,7 +1136,7 @@ namespace DatabaseManager.Controls
                             IsTranlatedScript = true
                         };
 
-                        this.ShowContent(info);
+                        this.ShowContent(info, true);
                     }
                 }
                 catch (Exception ex)
@@ -1205,11 +1205,11 @@ namespace DatabaseManager.Controls
             this.ShowContent(DatabaseObjectDisplayType.Script);
         }
 
-        private void ShowContent(DatabaseObjectDisplayInfo info)
+        private void ShowContent(DatabaseObjectDisplayInfo info, bool refresh)
         {
             if (this.OnShowContent != null)
             {
-                this.OnShowContent(info);
+                this.OnShowContent(info, refresh);
             }
         }
 
@@ -1231,7 +1231,7 @@ namespace DatabaseManager.Controls
 
             info.ConnectionInfo = this.GetCurrentConnectionInfo();
 
-            this.ShowContent(info);
+            this.ShowContent(info, !isNew);
         }
 
         private void tsmiNewView_Click(object sender, EventArgs e)
@@ -1273,7 +1273,7 @@ namespace DatabaseManager.Controls
             displayInfo.Content = scriptTemplate.GetTemplateContent(databaseObjectType, scriptAction, dbObj);
             displayInfo.ScriptAction = scriptAction;
 
-            this.ShowContent(displayInfo);
+            this.ShowContent(displayInfo, true);
         }
 
         private void tsmiAlter_Click(object sender, EventArgs e)

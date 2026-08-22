@@ -1,6 +1,7 @@
 ﻿using DatabaseManager.Core;
 using DatabaseManager.Core.Model;
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,8 +9,12 @@ namespace DatabaseManager.Forms
 {
     public partial class frmDataFilterCondition : Form
     {
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DataGridViewColumn Column { get; set; }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public QueryConditionItem Condition { get; set; }
 
         public frmDataFilterCondition()

@@ -4,9 +4,7 @@ using SqlAnalyser.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
-using static Antlr4.Runtime.Atn.SemanticContext;
 
 namespace SqlAnalyser.Core
 {

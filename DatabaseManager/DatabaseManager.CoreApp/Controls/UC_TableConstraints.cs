@@ -3,6 +3,7 @@ using DatabaseManager.Core.Model;
 using DatabaseManager.Helper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -15,8 +16,13 @@ namespace DatabaseManager.Controls
 
         public bool Inited => this.inited;
         public bool LoadedData => this.loadedData;
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Table Table { get; set; }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
 
         public GeneateChangeScriptsHandler OnGenerateChangeScripts;

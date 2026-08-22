@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace DatabaseManager.Forms
@@ -7,7 +8,13 @@ namespace DatabaseManager.Forms
     public partial class frmItemsSimpleSelector : Form
     {
         private IEnumerable<string> items;
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IsSingleSelect { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<string> SelectedItems { get; set; } = new List<string>();
 
         public frmItemsSimpleSelector(IEnumerable<string> items)

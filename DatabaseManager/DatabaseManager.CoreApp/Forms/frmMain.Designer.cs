@@ -1,4 +1,6 @@
-﻿namespace DatabaseManager.Forms
+﻿using DatabaseManager.CoreApp;
+
+namespace DatabaseManager.Forms
 {
     partial class frmMain
     {
@@ -91,7 +93,7 @@
             // 
             // tsmiDbConnection
             // 
-            tsmiDbConnection.Image = Resources.DbConnect16;
+            tsmiDbConnection.Image = Resource.DbConnect16;
             tsmiDbConnection.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             tsmiDbConnection.Name = "tsmiDbConnection";
             tsmiDbConnection.Size = new System.Drawing.Size(163, 22);
@@ -100,7 +102,7 @@
             // 
             // tsmiBackupSetting
             // 
-            tsmiBackupSetting.Image = Resources.DbBackup;
+            tsmiBackupSetting.Image = Resource.DbBackup;
             tsmiBackupSetting.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             tsmiBackupSetting.Name = "tsmiBackupSetting";
             tsmiBackupSetting.Size = new System.Drawing.Size(163, 22);
@@ -161,7 +163,7 @@
             // 
             // tsmiJsonViwer
             // 
-            tsmiJsonViwer.Image = Resources.JSON;
+            tsmiJsonViwer.Image = Resource.JSON;
             tsmiJsonViwer.Name = "tsmiJsonViwer";
             tsmiJsonViwer.Size = new System.Drawing.Size(180, 22);
             tsmiJsonViwer.Text = "JSON Viewer";
@@ -254,7 +256,7 @@
             // 
             tsBtnDataCompare.AutoSize = false;
             tsBtnDataCompare.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            tsBtnDataCompare.Image = Resources.DataCompare32;
+            tsBtnDataCompare.Image = Resource.DataCompare32;
             tsBtnDataCompare.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             tsBtnDataCompare.ImageTransparentColor = System.Drawing.Color.Magenta;
             tsBtnDataCompare.Name = "tsBtnDataCompare";
@@ -279,7 +281,7 @@
             // 
             tsBtnTranslateScript.AutoSize = false;
             tsBtnTranslateScript.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            tsBtnTranslateScript.Image = Resources.Translate;
+            tsBtnTranslateScript.Image = Resource.Translate;
             tsBtnTranslateScript.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             tsBtnTranslateScript.ImageTransparentColor = System.Drawing.Color.Magenta;
             tsBtnTranslateScript.Name = "tsBtnTranslateScript";

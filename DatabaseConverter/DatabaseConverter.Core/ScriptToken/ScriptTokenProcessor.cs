@@ -1,12 +1,10 @@
-﻿using DatabaseConverter.Core.Model;
-using DatabaseConverter.Model;
+﻿using DatabaseConverter.Model;
 using DatabaseInterpreter.Core;
 using DatabaseInterpreter.Model;
 using DatabaseInterpreter.Utility;
 using SqlAnalyser.Model;
 using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -34,9 +32,9 @@ namespace DatabaseConverter.Core
         {
             get
             {
-                List<char> chars = new List<char>() { '"'};
+                List<char> chars = new List<char>() { '"' };
 
-                if(this.SourceDbInterpreter.QuotationLeftChar.HasValue)
+                if (this.SourceDbInterpreter.QuotationLeftChar.HasValue)
                 {
                     chars.Add(this.SourceDbInterpreter.QuotationLeftChar.Value);
                     chars.Add(this.SourceDbInterpreter.QuotationRightChar.Value);
@@ -746,8 +744,8 @@ namespace DatabaseConverter.Core
 
             string upperCase = token.Symbol.Trim().ToUpper();
 
-            if (upperCase == "NULL" 
-                || (upperCase.EndsWith(")") && token.Children.Count ==0 ) 
+            if (upperCase == "NULL"
+                || (upperCase.EndsWith(")") && token.Children.Count == 0)
                 || (token.Symbol.StartsWith("@") && token.Children.Count == 0))
             {
                 return false;
@@ -759,7 +757,7 @@ namespace DatabaseConverter.Core
 
         private string RemoveRepeatedQuotationChars(string symbol)
         {
-            if(this.TargetDbInterpreter.QuotationLeftChar.HasValue)
+            if (this.TargetDbInterpreter.QuotationLeftChar.HasValue)
             {
                 string repeatedQuotationLeftChars = this.TargetDbInterpreter.QuotationLeftChar.ToString().PadLeft(2, this.TargetDbInterpreter.QuotationLeftChar.Value);
                 string repeatedQuotationRightChars = this.TargetDbInterpreter.QuotationRightChar.ToString().PadLeft(2, this.TargetDbInterpreter.QuotationRightChar.Value);
@@ -770,7 +768,7 @@ namespace DatabaseConverter.Core
             else
             {
                 return symbol;
-            }            
+            }
         }
 
         private bool IsAlias(TokenInfo token, IEnumerable<TokenInfo> tokens, TokenType tokenType, TokenSymbolNameInfo nameInfo = null)
@@ -981,7 +979,7 @@ namespace DatabaseConverter.Core
 
         private string GetTrimedName(string name)
         {
-            if(this.SourceDbInterpreter.QuotationLeftChar.HasValue)
+            if (this.SourceDbInterpreter.QuotationLeftChar.HasValue)
             {
                 return name?.Trim(this.SourceDbInterpreter.QuotationLeftChar.Value, this.SourceDbInterpreter.QuotationRightChar.Value, '"');
             }
@@ -1171,7 +1169,7 @@ namespace DatabaseConverter.Core
             else
             {
                 return this.GetNewQuotedString(symbol.Trim());
-            }            
+            }
         }
 
         public void Dispose()

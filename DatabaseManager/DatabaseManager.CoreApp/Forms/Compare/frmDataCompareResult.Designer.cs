@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using DatabaseManager.CoreApp;
+using System.Windows.Forms;
 
 namespace DatabaseManager.Forms.Compare
 {
@@ -497,7 +498,7 @@ namespace DatabaseManager.Forms.Compare
             // 
             tsbGenerateScript.AutoSize = false;
             tsbGenerateScript.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbGenerateScript.Image = Resources.DbScripts;
+            tsbGenerateScript.Image = Resource.DbScripts;
             tsbGenerateScript.ImageTransparentColor = System.Drawing.Color.Magenta;
             tsbGenerateScript.Name = "tsbGenerateScript";
             tsbGenerateScript.Size = new System.Drawing.Size(30, 30);
@@ -513,7 +514,7 @@ namespace DatabaseManager.Forms.Compare
             // 
             tsbSynchronize.AutoSize = false;
             tsbSynchronize.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            tsbSynchronize.Image = Resources.Run;
+            tsbSynchronize.Image = Resource.Run;
             tsbSynchronize.ImageTransparentColor = System.Drawing.Color.Magenta;
             tsbSynchronize.Name = "tsbSynchronize";
             tsbSynchronize.Size = new System.Drawing.Size(30, 30);

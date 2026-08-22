@@ -4,6 +4,7 @@ using DatabaseManager.Core;
 using DatabaseManager.Core.Model;
 using DatabaseManager.FileUtility.Model;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -12,7 +13,12 @@ namespace DatabaseManager.Forms
 {
     public partial class frmTableDiagnoseResult : Form
     {
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ConnectionInfo ConnectionInfo { get; set; }
 
         public frmTableDiagnoseResult()

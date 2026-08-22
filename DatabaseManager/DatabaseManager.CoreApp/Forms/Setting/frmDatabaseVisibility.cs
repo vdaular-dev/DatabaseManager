@@ -8,6 +8,7 @@ using DatabaseManager.Profile.Model;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -19,7 +20,13 @@ namespace DatabaseManager.Forms
     public partial class frmDatabaseVisibility : Form
     {
         private string accountId;
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public AccountProfileInfo AccountProfileInfo { get; set; }
 
         public frmDatabaseVisibility(string accountId)

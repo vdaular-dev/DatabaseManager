@@ -7,6 +7,7 @@ using DatabaseManager.Helper;
 using StackExchange.Profiling.Internal;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -23,7 +24,12 @@ namespace DatabaseManager.Controls
         private IEnumerable<DataTypeSpecification> dataTypeSpecifications;
         private bool isLoading = false;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<UserDefinedType> UserDefinedTypes { get; set; }
 
         public GeneateChangeScriptsHandler OnGenerateChangeScripts;

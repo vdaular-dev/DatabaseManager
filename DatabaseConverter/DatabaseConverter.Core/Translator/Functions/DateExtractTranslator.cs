@@ -1,7 +1,6 @@
 ﻿using DatabaseConverter.Core.Model.Functions;
 using DatabaseConverter.Model;
 using DatabaseInterpreter.Model;
-using DatabaseInterpreter.Utility;
 using System;
 
 namespace DatabaseConverter.Core.Functions

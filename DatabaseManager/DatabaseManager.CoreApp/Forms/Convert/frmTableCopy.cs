@@ -10,6 +10,7 @@ using DatabaseManager.Helper;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Common;
 using System.Drawing;
 using System.IO;
@@ -26,8 +27,16 @@ namespace DatabaseManager
         private DbConverter dbConverter = null;
         private CancellationTokenSource cancellationTokenSource;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ConnectionInfo ConnectionInfo { get; set; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Table Table { get; set; }
 
         public DatabaseInterpreter.Utility.FeedbackHandler OnFeedback;

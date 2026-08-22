@@ -1,4 +1,5 @@
 ﻿using DatabaseInterpreter.Model;
+using DatabaseManager.CoreApp;
 
 namespace DatabaseManager.Forms
 {
@@ -329,7 +330,7 @@ namespace DatabaseManager.Forms
             // 
             tsbGenerateScript.AutoSize = false;
             tsbGenerateScript.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            tsbGenerateScript.Image = Resources.DbScripts;
+            tsbGenerateScript.Image = Resource.DbScripts;
             tsbGenerateScript.ImageTransparentColor = System.Drawing.Color.Magenta;
             tsbGenerateScript.Name = "tsbGenerateScript";
             tsbGenerateScript.Size = new System.Drawing.Size(30, 30);
@@ -345,7 +346,7 @@ namespace DatabaseManager.Forms
             // 
             tsbSynchronize.AutoSize = false;
             tsbSynchronize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            tsbSynchronize.Image = Resources.Run;
+            tsbSynchronize.Image = Resource.Run;
             tsbSynchronize.ImageTransparentColor = System.Drawing.Color.Magenta;
             tsbSynchronize.Name = "tsbSynchronize";
             tsbSynchronize.Size = new System.Drawing.Size(30, 30);

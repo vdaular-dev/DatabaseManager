@@ -5,6 +5,7 @@ using DatabaseManager.Profile.Model;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace DatabaseManager.Forms
         private Rectangle dragBox;
         private int rowIndexFromMouseDown;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DatabaseType DatabaseType { get; set; }       
 
         public frmDbConnectionProfileManage(string accountId)

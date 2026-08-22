@@ -1990,6 +1990,8 @@ namespace SqlAnalyser.Core
                     {
                         columnName = new ColumnName(expr);
                     }
+
+                    this.AddChildColumnNameToken(node, columnName);
                 }
 
                 if (!strict && columnName == null)

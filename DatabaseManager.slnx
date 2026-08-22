@@ -1,0 +1,39 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/01. DatabaseInterpreter/">
+    <Project Path="DatabaseInterpreter/DatabaseInterpreter.Core/DatabaseInterpreter.Core.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="DatabaseInterpreter/DatabaseInterpreter.Geometry/DatabaseInterpreter.Geometry.csproj" />
+    <Project Path="DatabaseInterpreter/DatabaseInterpreter.Model/DatabaseInterpreter.Model.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="DatabaseInterpreter/DatabaseInterpreter.Utility/DatabaseInterpreter.Utility.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/02. DatabaseConverter/">
+    <Project Path="DatabaseConverter/DatabaseConverter.Core/DatabaseConverter.Core.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="DatabaseConverter/SqlAnalyser.Core/SqlAnalyser.Core.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/03. DatabaseManager/">
+    <Project Path="DatabaseManager/DatabaseManager.Core/DatabaseManager.Core.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="DatabaseManager/DatabaseManager.CoreApp/DatabaseManager.CoreApp.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="DatabaseManager/DatabaseManager.FileUtility/DatabaseManager.FileUtility.csproj" />
+    <Project Path="DatabaseManager/DatabaseManager.Profile/DatabaseManager.Profile.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="DatabaseManager/DatabaseManager.Web/DatabaseManager.Web.csproj" />
+  </Folder>
+</Solution>

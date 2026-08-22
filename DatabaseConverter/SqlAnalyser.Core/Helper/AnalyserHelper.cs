@@ -5,8 +5,6 @@ using SqlAnalyser.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Principal;
 using System.Text.RegularExpressions;
 
 namespace SqlAnalyser.Core

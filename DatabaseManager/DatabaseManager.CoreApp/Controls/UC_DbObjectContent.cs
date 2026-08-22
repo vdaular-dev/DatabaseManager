@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.ComponentModel;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace DatabaseManager.Controls
@@ -26,6 +27,8 @@ namespace DatabaseManager.Controls
 
         internal DatabaseObjectDisplayInfo DisplayInfo => this.info;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         internal IEnumerable<IDockContent> ExistingContents { get; set; }
 
         public UC_DbObjectContent()
@@ -38,6 +41,8 @@ namespace DatabaseManager.Controls
 
         public void ShowContent(DatabaseObjectDisplayInfo info)
         {
+            this.Controls.Clear();
+
             this.info = info;
 
             if (info.DisplayType == DatabaseObjectDisplayType.Script)

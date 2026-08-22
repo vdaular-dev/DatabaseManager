@@ -1,10 +1,8 @@
-﻿using DatabaseInterpreter.Model;
-using DatabaseInterpreter.Utility;
+﻿using DatabaseInterpreter.Utility;
 using SqlAnalyser.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace SqlAnalyser.Core

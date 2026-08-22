@@ -1,16 +1,10 @@
-﻿using Antlr4.Runtime.Atn;
-using Antlr4.Runtime.Dfa;
-using DatabaseConverter.Model;
+﻿using DatabaseConverter.Model;
 using DatabaseInterpreter.Core;
 using DatabaseInterpreter.Model;
 using DatabaseInterpreter.Utility;
-using Newtonsoft.Json.Linq;
-using Npgsql.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
 

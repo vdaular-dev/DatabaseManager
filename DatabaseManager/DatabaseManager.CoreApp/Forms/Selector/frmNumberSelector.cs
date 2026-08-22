@@ -14,18 +14,24 @@ namespace DatabaseManager.Forms
     {
         public decimal InputValue { get; private set; }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public decimal MinValue
         {
             get { return this.nudValue.Minimum; }
             set { this.nudValue.Minimum = value; }
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public decimal MaxValue
         {
             get { return this.nudValue.Maximum; }
             set { this.nudValue.Maximum = value; }
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string Title
         {
             get { return this.lblTitle.Text; }

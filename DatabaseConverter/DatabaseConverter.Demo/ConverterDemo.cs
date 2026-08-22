@@ -4,6 +4,7 @@ using DatabaseInterpreter.Core;
 using DatabaseInterpreter.Model;
 using DatabaseInterpreter.Utility;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DatabaseConverter.Demo
@@ -60,7 +61,11 @@ namespace DatabaseConverter.Demo
 
                     FeedbackHelper.EnableLog = true;
 
-                    await dbConverter.Convert();
+                    CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
+                    var token = cancellationTokenSource.Token;
+
+                    await dbConverter.Convert(token);
                 }                   
             }
             catch (Exception ex)

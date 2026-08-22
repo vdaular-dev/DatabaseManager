@@ -4,6 +4,7 @@ using DatabaseManager.Forms;
 using DatabaseManager.Helper;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace DatabaseManager.Controls
     {
         private DbInterpreter dbInterpreter;
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowCheckBox
         {
             get
