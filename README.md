@@ -42,22 +42,22 @@
   Delete all objects of a database. 
 
 ## UI - Main Page
-![Main Page](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/DatabaseManager/Main.png?raw=true&rid=1)
+![Main Page](https://github.com/victor-wiki/StaticResources/blob/master/images/projs/DatabaseManager/Main.png?raw=true&rid=1)
 
 ## UI - Convert Database
-![Convert Database](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/DatabaseManager/Convert.png?raw=true&rid=1)
+![Convert Database](https://github.com/victor-wiki/StaticResources/blob/master/images/projs/DatabaseManager/Convert.png?raw=true&rid=1)
 
 ## UI - Compare Schema
-![Compare Schema](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/DatabaseManager/Compare.png?raw=true&rid=1)
+![Compare Schema](https://github.com/victor-wiki/StaticResources/blob/master/images/projs/DatabaseManager/Compare.png?raw=true&rid=1)
 
 ## UI - Compare Data
-![Compare Data](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/DatabaseManager/DataCompare.png?raw=true&rid=1)
+![Compare Data](https://github.com/victor-wiki/StaticResources/blob/master/images/projs/DatabaseManager/DataCompare.png?raw=true&rid=1)
 
 ## UI - Table Designer
-![Table Designer](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/DatabaseManager/TableDesigner.png?raw=true&rid=1)
+![Table Designer](https://github.com/victor-wiki/StaticResources/blob/master/images/projs/DatabaseManager/TableDesigner.png?raw=true&rid=1)
 
 ## UI - Edit Data
-![Edit Data](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/DatabaseManager/EditData.png?raw=true&rid=1)
+![Edit Data](https://github.com/victor-wiki/StaticResources/blob/master/images/projs/DatabaseManager/EditData.png?raw=true&rid=1)
 
 ## UI - Translate Script
-![Translate Script](https://github.com/victor-wiki/StaticResources/blob/master/StaticResources/images/projs/DatabaseManager/TranslateScript.png?raw=true&rid=1)
+![Translate Script](https://github.com/victor-wiki/StaticResources/blob/master/images/projs/DatabaseManager/TranslateScript.png?raw=true&rid=1)
